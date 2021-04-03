@@ -3,3 +3,5 @@ A short program which sorts through a .CSV list of Lichess puzzles, and looks fo
 
 PS: This was the first time I actually programmed a full-on project (albeit this is a VERY minor one). It took me ~3 hours to actually get my laptop to install an IDE and then for me to make this program and then use a compiler (20 minutes of actual programming if we were to ignore the set-up time).
 
+UPDATE: I've gotten this to work in C#! But the syntax is so similar it would be a waste of time for me to put it up here.
+
