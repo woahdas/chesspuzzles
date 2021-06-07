@@ -1,73 +1,75 @@
-#include <ifstream>
-#include <stdio>
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+#include <fstream>
+#include <thread>
+
 using namespace std;
 
-int linecounter = 0;
+std::string stringline;
 
-int main()
+std::string ReadNthLine(const std::string& filename, int N)
 {
-	ifstream chesspuzzles("lichess_db_puzzle.csv"); //read the puzzle.csv file as chesspuzzles
-	while (getline(chesspuzzles) //read it line by line until the end
-	{
-		linecounter++; //line counter, who knows what it will do?
-		for (int i = 0; i < 100; i++) //100 is just randomly picked 
-		{
-			if (isdigit(chesspuzzles[i]))
-			{
-				if (chesspuzzles[i] != 1)
-				{
-					i++;
-					return main();
-				}
-				if (isdigit(chesspuzzles[int i1 = i + 1]) != true)
-				{
-					i++;
-					return main();
-				}
-				if (isdigit(chesspuzzles[int i2 = i + 2]) != true)
-				{
-					i++;
-					return main();
-				}
-				if (chesspuzzles[i] == 1 && isdigit(chesspuzzles[i++]) = true && isdigit(chesspuzzles[i + 2]) == true) //if it actually found the 4 digit rating
-				{
-					int rating1 = 1600; //lower rating boundary
-					int rating2 = 1800; //upper rating boundary
-					
-					if (chesspuzzles[i2] != rating1[1] || rating2[1]) //if the second digit isn't 6 or 8 (not in our rating boundaries)
-					{
-						i++;
-						return main();
-					}
-					if (chesspuzzles[i2] == rating1[1] || rating2[1])
-					{
-					} //if it is in our rating boundaries, it's allowed to continue execution
-				}
-				for (int b = 0; int b < 100; int b++ && while true) //infinite loop
-				{
-					if (chesspuzzles[i] != "h")//if it isn't h (always not true as we just started looking at the integer
-					{
-						i++;
-					}
-					if (chesspuzzles[i] == "h")
-					{
-					}
-					if (chesspuzzles[i + 1] == "t") //at this point we found the url
-					{
-						bool found = true;
-					}
-				}
-			}
-		}
-	}
-	if (found = true)
-	{
-		string PartURL = "The link is "; //part of the url
-		cout << "You may need to add ht or whatever to the beginning \n";
-		for (int c = 0; c < 100; c++)
-		{
-			cout << i << " ";
-			i++;
-		}
-	}
+   std::ifstream in(filename.c_str());
+
+   //stringline.reserve(3);    
+
+   //skip n lines
+   for(int i = 0; i < N; ++i)
+       std::getline(in, stringline);
+
+   std::getline(in,stringline);
+   cout<<stringline;
+
+   return stringline; 
+}
+
+int main(){
+    for(int linecounter2 = 1; linecounter2 < 1731229; linecounter2++)
+    {
+
+    
+    ReadNthLine("lichess_db_puzzle.csv", linecounter2); //constantly reads every line
+    //cout<<stringline;
+    int stringcounter = 0; 
+    for(int linecounter = 0; linecounter < 1731228; linecounter++)
+    {
+        char characterc = stringline[stringcounter];
+        //lower bound check, rating 1600
+        if(characterc == '1')
+        {
+
+            char url1 = stringline[stringcounter+1];
+            if(url1 == '6')
+            {
+                char urlfound = stringline[stringcounter+2];
+                if(urlfound == '1' || '2' || '3' || '4' || '5' || '6' ||'7' || '8' ||'9' || '0')
+                {
+                    cout<<stringline;
+                }
+            }
+        
+        }
+    }
+    //upper bound check, rating 1800
+        for(int linecounter = 0; linecounter < 1731228; linecounter++)
+    {
+        char characterc = stringline[stringcounter];
+        if(characterc == '1')
+        {
+
+            char url1 = stringline[stringcounter+1];
+            if(url1 == '8')
+            {
+                char urlfound = stringline[stringcounter+2];
+                if(urlfound == '1' || '2' || '3' || '4' || '5' || '6' ||'7' || '8' ||'9' || '0')
+                {
+                    cout<<stringline;
+                }
+            }
+        
+        }
+    }
+    }
+    return 0;
 }
